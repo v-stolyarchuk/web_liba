@@ -1,0 +1,278 @@
+@import '../../styles/main';
+
+.product-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+
+    &__content {
+        background-color: $white;
+        border-radius: 8px;
+        max-width: 1200px;
+        width: 100%;
+        max-height: 95vh;
+        overflow: hidden;
+        position: relative;
+        animation: modalSlideIn 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+        border: none;
+        background-color: $background;
+        border-radius: 50%;
+        font-size: 2rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $dark;
+        transition: all 0.3s ease;
+        z-index: 10;
+
+        &:hover {
+            background-color: $primary;
+            color: $white;
+            transform: rotate(90deg);
+        }
+    }
+
+    &__slider {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $background;
+        min-height: 400px;
+        max-height: 70vh;
+        overflow: hidden;
+
+        .slick-slider {
+            width: 100%;
+            height: 100%;
+        }
+
+        .slick-list {
+            height: 100%;
+        }
+
+        .slick-track {
+            height: 100%;
+        }
+
+        .slick-slide {
+            height: 100%;
+            padding: 0 1rem;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slick-dots {
+            bottom: 1rem;
+            z-index: 5;
+
+            li {
+                button:before {
+                    font-size: 12px;
+                    color: $secondary;
+                    opacity: 0.7;
+                }
+            }
+
+            .slick-active {
+                button:before {
+                    color: $primary;
+                    opacity: 1;
+                }
+            }
+        }
+
+        .slick-prev,
+        .slick-next {
+            z-index: 5;
+            width: 40px;
+            height: 40px;
+
+            &:before {
+                font-size: 20px;
+                color: $primary;
+                opacity: 0.8;
+            }
+
+            &:hover:before,
+            &:focus:before {
+                opacity: 1;
+                color: $secondary;
+            }
+        }
+
+        .slick-prev {
+            left: 1rem;
+        }
+
+        .slick-next {
+            right: 1rem;
+        }
+    }
+
+    &__slide {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__image {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        display: block;
+        border-radius: 4px;
+    }
+
+    &__info {
+        padding: 1.5rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        background-color: $white;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        color: $dark;
+        margin-bottom: 0.75rem;
+        line-height: 1.2;
+    }
+
+    &__price {
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+        margin-bottom: 1rem;
+
+        .price-current {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: $primary;
+        }
+
+        .price-old {
+            font-size: 1.25rem;
+            color: #999;
+            text-decoration: line-through;
+        }
+    }
+
+    &__description {
+        font-size: 0.95rem;
+        color: #666;
+        line-height: 1.6;
+    }
+
+    @include onTablet {
+        padding: 2rem;
+
+        &__content {
+            max-height: 90vh;
+        }
+
+        &__slider {
+            min-height: 500px;
+            max-height: 65vh;
+        }
+
+        &__info {
+            padding: 2rem;
+        }
+
+        &__title {
+            font-size: 2rem;
+        }
+
+        &__price {
+            .price-current {
+                font-size: 2.25rem;
+            }
+
+            .price-old {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    @include onDesktop {
+        padding: 3rem;
+
+        &__content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 0;
+            max-height: 85vh;
+            overflow: hidden;
+        }
+
+        &__slider {
+            grid-column: 1;
+            grid-row: 1;
+            min-height: 600px;
+            max-height: 85vh;
+            border-radius: 8px 0 0 8px;
+        }
+
+        &__info {
+            grid-column: 2;
+            grid-row: 1;
+            border-top: none;
+            border-left: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
+            overflow-y: auto;
+            background-color: $white;
+            border-radius: 0 8px 8px 0;
+        }
+
+        &__close {
+            top: 1.5rem;
+            right: 1.5rem;
+        }
+
+        &__title {
+            font-size: 2.25rem;
+        }
+
+        &__price {
+            .price-current {
+                font-size: 2.5rem;
+            }
+
+            .price-old {
+                font-size: 1.75rem;
+            }
+        }
+    }
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

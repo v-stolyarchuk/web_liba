@@ -7,11 +7,11 @@ A single-page web app built with **Vite + React**, using **React Router DOM** fo
 
 - **Build tool:** Vite
 - **UI:** React (function components + hooks only, no class components)
-- **Language:** TypeScript <!-- EDIT: change to JavaScript if applicable -->
-- **Routing:** react-router-dom (data router: `createBrowserRouter`)
-- **State:** Redux Toolkit (+ RTK Query for server data)
-- **Styling:** Sass (SCSS syntax) with CSS Modules
-- **Package manager:** npm <!-- EDIT: pnpm / yarn -->
+- **Language:** JavaScript
+- **Routing:** react-router-dom
+- **State:** Redux Toolkit
+- **Styling:** Sass (SCSS syntax)
+- **Package manager:** npm
 
 ## Commands
 

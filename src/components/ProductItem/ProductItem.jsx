@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './ProductItem.scss';
 
-export const ProductItem = ({ product }) => {
+export const ProductItem = ({ product, onImageClick }) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
     const toggleSpecifications = () => {
@@ -27,9 +27,15 @@ export const ProductItem = ({ product }) => {
         );
     };
 
+    const handleImageClick = () => {
+        if (onImageClick) {
+            onImageClick(product);
+        }
+    };
+
     return (
         <div className="product-card">
-            <div className="product-image">
+            <div className="product-image" onClick={handleImageClick}>
                 <img
                     src={`images/products/${product.sku}/${product.images[0]}`}
                     alt={product.name}
