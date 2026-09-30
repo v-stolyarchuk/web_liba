@@ -1,0 +1,177 @@
+@use '../../styles/main' as *;
+
+.home-slider {
+    position: relative;
+    overflow: hidden;
+
+    .slick-slide {
+        display: flex;
+        align-items: center;
+        padding: 2rem 0;
+
+        .slide {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+
+            .slide-image {
+                flex: 1 1 100%;
+                max-width: 100%;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    max-height: 400px;
+                    border-radius: 8px;
+                    object-fit: cover;
+                    display: block;
+                }
+            }
+
+            .slide-text {
+                flex: 1 1 100%;
+                text-align: center;
+
+                .slide-title {
+                    font-size: 1.5rem;
+                    margin-bottom: 1rem;
+                    color: $black;
+                    line-height: 1.2;
+                }
+
+                .slide-button {
+                    display: inline-block;
+                    background-color: $primary;
+                    color: $white;
+                    padding: 0.75rem 1.5rem;
+                    border-radius: 4px;
+                    text-decoration: none;
+                    font-weight: 600;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        background-color: $secondary;
+                        color: $black;
+                        transform: translateY(-2px);
+                    }
+                }
+            }
+        }
+    }
+
+    /* Slick customizations */
+    .slick-dots {
+        bottom: -30px;
+
+        li {
+            button:before {
+                font-size: 12px;
+                color: $secondary;
+                opacity: 0.7;
+            }
+        }
+
+        .slick-active {
+            button:before {
+                color: $primary;
+                opacity: 1;
+            }
+        }
+    }
+
+    .slick-prev,
+    .slick-next {
+        display: none;
+    }
+
+    /* Tablet styles */
+    @include onTablet {
+        .slick-slide {
+            .slide {
+                .slide-image {
+                    flex: 1 1 300px;
+                    max-width: 300px;
+
+                    img {
+                        max-height: 350px;
+                    }
+                }
+
+                .slide-text {
+                    flex: 1 1 200px;
+                    text-align: left;
+
+                    .slide-title {
+                        font-size: 1.75rem;
+                    }
+                }
+            }
+        }
+
+        .slick-dots {
+            bottom: -35px;
+        }
+    }
+
+    /* Desktop styles */
+    @include onDesktop {
+        .slick-slide {
+            .slide {
+                .slide-image {
+                    flex: 1 1 400px;
+                    max-height: 400px;
+
+                    img {
+                        max-height: 400px;
+                    }
+                }
+
+                .slide-text {
+                    flex: 1 1 250px;
+                    text-align: left;
+
+                    .slide-title {
+                        font-size: 2rem;
+                        margin-bottom: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        .slick-dots {
+            bottom: -40px;
+        }
+
+        .slick-prev,
+        .slick-next {
+            display: block;
+            z-index: 1;
+            width: 40px;
+            height: 40px;
+
+            &:before {
+                font-size: 20px;
+                color: $primary;
+                opacity: 0.8;
+            }
+
+            &:hover:before,
+            &:focus:before {
+                opacity: 1;
+                color: $secondary;
+            }
+        }
+
+        .slick-prev {
+            left: -25px;
+        }
+
+        .slick-next {
+            right: -25px;
+        }
+    }
+}

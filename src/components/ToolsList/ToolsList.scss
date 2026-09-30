@@ -1,0 +1,86 @@
+@use '../../styles/main' as *;
+
+.tools-list {
+  padding: 2rem 0;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: $black;
+    font-size: 2rem;
+  }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    .tool-card {
+      background-color: $white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      }
+
+      .tool-image {
+        height: 180px;
+        overflow: hidden;
+        background-color: #f8f9fa;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          padding: 1rem;
+          transition: transform 0.3s ease;
+        }
+
+        &:hover img {
+          transform: scale(1.05);
+        }
+      }
+
+      .tool-info {
+        padding: 1.5rem;
+
+        .tool-name {
+          font-size: 1.25rem;
+          margin-bottom: 0.75rem;
+          color: $black;
+        }
+
+        .tool-description {
+          font-size: 0.95rem;
+          color: #666;
+          margin-bottom: 1.5rem;
+          line-height: 1.4;
+        }
+
+        .tool-button {
+          display: inline-block;
+          background-color: $primary;
+          color: $white;
+          padding: 0.75rem 1.5rem;
+          border-radius: 4px;
+          text-decoration: none;
+          font-weight: 600;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: $secondary;
+            color: $black;
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+  }
+}

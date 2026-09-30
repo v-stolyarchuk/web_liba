@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "remove.bg",
+    "url": "https://www.remove.bg/",
+    "image": "removebg.jpg",
+    "description": "Видаляє і замінює фон зображення. Можна доприбирати фон вручну, є готові шаблони"
+  },
+  {
+    "id": 2,
+    "name": "Convertio WEBP / PNG",
+    "url": "https://convertio.co/webp-png/",
+    "image": "convertio.jpg",
+    "description": "Convert WebP images to PNG format"
+  },
+  {
+    "id": 3,
+    "name": "TinyPNG",
+    "url": "https://tinypng.com/",
+    "image": "tinypng.jpg",
+    "description": "Стискає PNG та JPEG зображення без помітної втрати якості. Допомагає зменшити розмір файлів для вебсайтів"
+  },
+  {
+    "id": 4,
+    "name": "Squoosh",
+    "url": "https://squoosh.app/",
+    "image": "squoosh.jpg",
+    "description": "Оптимізує та стискає зображення прямо в браузері. Підтримує сучасні формати WebP та AVIF"
+  },
+  {
+    "id": 5,
+    "name": "CloudConvert",
+    "url": "https://cloudconvert.com/",
+    "image": "cloudconvert.jpg",
+    "description": "Онлайн-конвертер для зображень, документів, відео та інших форматів. Підтримує PNG, JPG, WEBP, SVG та багато інших"
+  },
+  {
+    "id": 6,
+    "name": "iLoveIMG",
+    "url": "https://www.iloveimg.com/",
+    "image": "iloveimg.jpg",
+    "description": "Набір онлайн-інструментів для редагування, стиснення, зміни розміру, обрізання та конвертації зображень"
+  },
+  {
+    "id": 7,
+    "name": "Photopea",
+    "url": "https://www.photopea.com/",
+    "image": "photopea.jpg",
+    "description": "Потужний онлайн-редактор зображень, схожий на Photoshop. Підтримує PSD, PNG, JPG, SVG та інші формати"
+  },
+  {
+    "id": 8,
+    "name": "Upscale.media",
+    "url": "https://www.upscale.media/",
+    "image": "upscale-media.jpg",
+    "description": "Збільшує роздільну здатність зображень за допомогою AI та покращує деталізацію фотографій"
+  },
+  {
+    "id": 9,
+    "name": "EZGIF",
+    "url": "https://ezgif.com/",
+    "image": "ezgif.jpg",
+    "description": "Онлайн-інструменти для створення та редагування GIF, конвертації відео, зміни розміру та оптимізації зображень"
+  },
+  {
+    "id": 10,
+    "name": "SVGOMG",
+    "url": "https://svgomg.net/",
+    "image": "svgomg.jpg",
+    "description": "Оптимізує SVG-файли, видаляючи зайві дані та зменшуючи розмір файлів без помітної втрати якості"
+  }
+]
